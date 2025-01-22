@@ -3,7 +3,21 @@
 1. [ HttpServletRequest ]
 	1. 웹 브라우저의 HTTP 요청 정보를 저장한다.
 	2. 주요 메소드 
-		1. .getParameter("매개변수명");		: 요청 매개변수 이름의 값을 전달 받는다. 요청 매개변수 값이 없으면 null 반환한다.
+		1. req.getParameter("매개변수명");		: url상의 쿼리스트링 매개변수 값 반환 함수. 요청 매개변수 값이 없으면 null 반환한다.
+		2. .getReader()						: Http header body(본문)을 읽어드리는 객체 반환 함수
+			- req.getReader().readLine()	: body(본문) 한줄 반환 함수.
+	*body(본문) content-type : applicatoin/json  // 대부분이 자바스크립트랑 통신하기때문에 json
+		- JSON 타입 --> DTO 타입 변환
+		ObjectMapper 변수명 = new ObjectMapper();
+		변환된타입명 = 변수명.readValue(req.getReader(), DTO클래스명.class);
 		
+ 		
 2. [ HttpServletResponse ]
 	1. 웹 브라우저의 HTTP 요청에 대한 *응답* 정보를 저장한다.
+	2. 주요 메소드
+		1. resp.getWriter("보낼자료")				: Http header body(본문)로 응답을 보내는 함수
+		2. resp.serContentType("content-type")	: HTTP header body(본문) 자료의 타입 설정하는 함수
+	*body(본문) content-type : application/json
+		- DTO 타입 --> JSON 타입 변환
+		ObjectMapper 변수명 = new ObjectMapper();
+		String 결과변수명 = 변수명.writeValueAsString(변환할자료);

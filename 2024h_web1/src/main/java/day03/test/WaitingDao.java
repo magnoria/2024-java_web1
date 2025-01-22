@@ -1,4 +1,4 @@
-package day03.task4;
+package day03.test;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -18,8 +18,8 @@ public class WaitingDao {
 		
 		try {
 			
-			Class.forName("com.musql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb0116" , "root" , "1234");
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mydb0120" , "root" , "1234");
 			
 		} catch (Exception e) {
 			System.out.println(e);
@@ -37,7 +37,7 @@ public class WaitingDao {
 			String sql = "insert into waiting(people, ponnumber) value (?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, waitingDto.getPeople());
-			ps.setInt(2, waitingDto.getPonnumber());
+			ps.setString(2, waitingDto.getPonnumber());
 			int count = ps.executeUpdate();
 			if (count == 1) { return true;
 				
@@ -63,7 +63,7 @@ public class WaitingDao {
 				WaitingDto waitingDto = new WaitingDto();
 				waitingDto.setNum(rs.getInt("num"));
 				waitingDto.setPeople(rs.getString("people"));
-				waitingDto.setPonnumber(rs.getInt("ponnumber"));
+				waitingDto.setPonnumber(rs.getString("ponnumber"));
 				list.add(waitingDto);
 			}
 			
@@ -83,7 +83,7 @@ public class WaitingDao {
 					+ " where num = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, waitingDto.getPeople());
-			ps.setInt(2, waitingDto.getPonnumber());
+			ps.setString(2, waitingDto.getPonnumber());
 			ps.setInt(3, waitingDto.getNum());
 			int count = ps.executeUpdate();
 			if (count == 1) {

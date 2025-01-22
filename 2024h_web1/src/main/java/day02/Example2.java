@@ -25,11 +25,11 @@ public class Example2 extends HttpServlet {
 				
 				//http://localhost:8080/2024h_web1/day02/example2?name=유재석
 				// .getOrameter("URL경로상의 매개변수명"); // 매개변수명의 값(String타입) 반환 함수 , 없으면 NULL
-				System.out.println("1] URL ? 뒤에 있는 'name' 이라는 매개변수명을 가진 변수의 값 가져오기  ");
+				//System.out.println("1] URL ? 뒤에 있는 'name' 이라는 매개변수명을 가진 변수의 값 가져오기  ");
 				System.out.println(req.getParameter("name"));
 				
 				//http://localhost:8080/2024h_web1/day02/example2?name=유재석&age=40
-				System.out.println("1] URL ? 뒤에 'age' 이라는 매개변수명을 가진 변수의 값 가져오기 ");
+				//System.out.println("1] URL ? 뒤에 'age' 이라는 매개변수명을 가진 변수의 값 가져오기 ");
 				System.out.println(req.getParameter("age"));
 				
 	}//f end

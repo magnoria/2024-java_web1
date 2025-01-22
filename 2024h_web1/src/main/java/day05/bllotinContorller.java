@@ -1,6 +1,7 @@
-package day03.task4;
+package day05;
 
 import java.io.IOException;
+import java.io.Reader;
 import java.util.ArrayList;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,57 +12,65 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/day03/waiting2")
-public class WaitingController extends HttpServlet {
-
+@WebServlet("/day5/board")
+public class bllotinContorller extends HttpServlet {
 	
+	
+	
+	// 여기 연결부분은 서버연결이라기 보다는 신호가 가는지 안가는지 확인
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("post 확인");
+		//1. HTTP BODY
 		ObjectMapper mapper = new ObjectMapper();
-		WaitingDto waitingDto = mapper.readValue(req.getReader(), WaitingDto.class );
+		bllotinDto blloDto = mapper.readValue(req.getReader(), bllotinDto.class);
+		boolean result = bllotinDao.getInstance().write(blloDto);
 		
-		boolean result = WaitingDao.getInstance().write(waitingDto);
-		
+		//3. 결과 응답
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
-	}//f end
-	
-	
-	
-	//2.방문록 조회
+		
+	}//post end
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("get 확인");
+		//1. x
 		
-		ArrayList<WaitingDto> result = WaitingDao.getInstance().findAll();
+		//2. Dao처리
+		ArrayList<bllotinDto> result = bllotinDao.getInstance().findAll();
 		
+		//3. 결과응답
 		ObjectMapper mapper = new ObjectMapper();
-		String jsonResult = mapper.writeValueAsString(result);
+		String jsonReult = mapper.writeValueAsString(result);
+		
 		resp.setContentType("application/json");
-		resp.getWriter().print(jsonResult);
-	}//f end
+		resp.getWriter().print(jsonReult);
+		
+		
+		
+	}// get end
 	
 	
+	//3. 게시판 수정
 	@Override
 	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("put 확인");
 		ObjectMapper mapper = new ObjectMapper();
-		WaitingDto waitingDto = mapper.readValue(req.getReader(), WaitingDto.class );
+		bllotinDto bllotinDto = mapper.readValue(req.getReader(), bllotinDto.class );
 		
-		boolean result = WaitingDao.getInstance().update(waitingDto);
+		boolean result = bllotinDao.getInstance().update(bllotinDto);
 		
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
 		
-	}//f end
+	}//put end
+	
 	
 	@Override
 	protected void doDelete(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int num = Integer.parseInt(req.getParameter("num"));
-		boolean result = WaitingDao.getInstance().delete(num);
-		
-		resp.setContentType("application/json");
-		resp.getWriter().print(result);
-	}
+		System.out.println("delete 확인");
+	}// delete
 	
 	
 	

@@ -1,16 +1,16 @@
-package day03.task4;
+package day03.test;
 
 public class WaitingDto {
 	
 	private int num;
 	private String people;
-	private int ponnumber;
+	private String ponnumber;
 	
 	
 	public WaitingDto() {}
 
 
-	public WaitingDto(int num, String people, int ponnumber) {
+	public WaitingDto(int num, String people, String ponnumber) {
 		super();
 		this.num = num;
 		this.people = people;
@@ -38,13 +38,13 @@ public class WaitingDto {
 	}
 
 
-	public int getPonnumber() {
+	public String getPonnumber() {
 		return ponnumber;
 	}
 
 
-	public void setPonnumber(int ponnumber) {
-		this.ponnumber = ponnumber;
+	public void setPonnumber(String string) {
+		this.ponnumber = string;
 	}
 
 

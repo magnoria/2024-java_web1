@@ -96,8 +96,7 @@ public class VisitController extends HttpServlet {
 		//3. DAO 결과를 HTTP HEADER BODY(본문)으로 응답(response) 보내기
 		resp.setContentType("application/json");
 		resp.getWriter().print(result);
-		
-		
+	
 	}
 	
 	
