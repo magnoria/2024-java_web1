@@ -1,19 +1,19 @@
 package day05;
 
-public class bllotinDto {
-	
-	private int bno;
-	private String btitle;
-	private String bcontent;
-	private String bwriter;
-	private String bpwd;
-	private String bdate;
-	private int bview;
-	
-	public bllotinDto() {
+public class BoardDto {
+    private int bno;
+    private String btitle;
+    private String bcontent;
+    private String bwriter;
+    private String bpwd;
+    private String bdate;
+    private int bview ;
+    
+    public BoardDto() {
+		// TODO Auto-generated constructor stub
 	}
 
-	public bllotinDto(int bno, String btitle, String bcontent, String bwriter, String bpwd, String bdate, int bview) {
+	public BoardDto(int bno, String btitle, String bcontent, String bwriter, String bpwd, String bdate, int bview) {
 		super();
 		this.bno = bno;
 		this.btitle = btitle;
@@ -82,10 +82,8 @@ public class bllotinDto {
 
 	@Override
 	public String toString() {
-		return "bllotinDto [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bwriter=" + bwriter
+		return "BoardDto [bno=" + bno + ", btitle=" + btitle + ", bcontent=" + bcontent + ", bwriter=" + bwriter
 				+ ", bpwd=" + bpwd + ", bdate=" + bdate + ", bview=" + bview + "]";
 	}
 
-	
-
-}//class end
+}

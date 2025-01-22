@@ -9,14 +9,14 @@
 <body>
 	
 	
-	<jsp:include page = "header.jsp"/>
+	<jsp:include page = "header.jsp" />
 	
 	<div>
-		<h3> 메인페이지 : 다양한 페이지 제공합니다.</h3>
+		<h3> 메인페이지 : 다양한 페이지 제공 합니다.</h3>
 	</div>
 	
-	<jsp:include page = "footer.jsp"/>
-	<jsp:include page = "/day05/footer.jsp"/>
-
+	<jsp:include page="footer.jsp" />
+	<jsp:include page="/day05/footer.jsp" />
+	
 </body>
 </html>

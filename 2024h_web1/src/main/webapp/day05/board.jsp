@@ -7,33 +7,30 @@
 <title>Insert title here</title>
 </head>
 <body>
-		<jsp:include page ="/day05/header.jsp"></jsp:include>
+
+	<jsp:include page="/day05/header.jsp"></jsp:include>
+
+	<div>
+		<h3> 게시물 전체 조회 : 커뮤니티를 제공합니다. </h3>
+		<a href="/tj2024b_web1/day05/write.jsp"> 글쓰기 </a>
 		
-		<div>
-			<h3>게시판 : 커뮤니티를 제공합니다.</h3>
-			<a href ="/2024h_web1/day05/write.jsp"> 글쓰기 </a>
-			<!--<button onclick="location.href='/2024h_web1/day05/write.jsp'"></button>  -->
-			<table>
-				<thead border="1">
-					<tr>
-						<th>번호</th><th>제목</th><th>작성일</th><th>작성자</th><th>조회수</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<th>1</th><th><a href="view.jsp?bno=1">안녕하세요1</a></th>
-						<th>2025-01-11:09:05</th><th>유재석</th><th>30</th>
-					</tr>
-					<tr>
-						<th>2</th><th><a href="view.jsp?bno=2">안녕하세요2</a></th>
-						<th>2025-01-11:09:05</th><th>강호동</th><th>4</th>
-					</tr>
-				</tbody>
-			</table>
-			
-		</div>
+		<table border="1">
+			<thead>
+				<tr>
+					<th> 번호 </th> <th> 제목 </th> <th> 작성일 </th> 
+					<th> 작성자 </th> <th> 조회수 </th>
+				</tr>
+			</thead>
+			<tbody>
+
+			</tbody>
+		</table>
 		
-		<jsp:include page ="/day05/footer.jsp"></jsp:include>
+	</div>
 	
+	<script src="board.js"></script>
+	<jsp:include page="/day05/footer.jsp"></jsp:include>
+
+
 </body>
 </html>
