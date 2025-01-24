@@ -22,10 +22,10 @@ const boardWrite = () => {
                 body : JSON.stringify( dataObj )
         }
         // 5. fetch 
-        fetch( '/tj2024b_web1/day05/board' , option )
+        fetch( '/2024h_web1/day05/board' , option )
                 .then( response => response.json() )
                 .then( data => {
-                        if( data == true ){ alert('글쓰기성공'); location.href="/tj2024b_web1/day05/board.jsp";}
+                        if( data == true ){ alert('글쓰기성공'); location.href="/2024h_web1/day05/board.jsp";}
                         else{ alert('글쓰기실패');}
                 })
                 .catch( error =>{ alert('시스템오류 : 관리자에게 문의') })

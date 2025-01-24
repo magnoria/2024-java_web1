@@ -10,7 +10,7 @@ const boardFindAll = ( ) => {
 	// - fetch 옵션 
 	const option = { method : 'GET'}
 	// - fetch 사용 
-	fetch( '/tj2024b_web1/day05/board' , option )
+	fetch( '/2024h_web1/day05/board' , option )
 		.then( response => response.json() )
 		.then( data => {
 	

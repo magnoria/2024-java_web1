@@ -40,7 +40,7 @@ public class Example1 extends HttpServlet {
 			ValueDto valueDto = mapper.readValue(req.getReader(), ValueDto.class);
 			System.out.println(valueDto);
 			//2. 응답 HTTP header body
-			valueDto result = new ValueDto("강호동", 23);
+			ValueDto result = new ValueDto("강호동", 23);
 				String jsonResult = mapper.writeValueAsString(result); // DTO 객체를 문자열(JSON)타입으로 변환
 			resp.setContentType("application/json"); // DTO는 JSON으로 자동 변환할 수 없다.
 			resp.getWriter().print(result);// 반환된 문자열(JSON) 반환
