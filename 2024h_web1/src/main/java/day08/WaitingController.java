@@ -81,7 +81,7 @@ public class WaitingController extends HttpServlet {
 				break;
 			}
 			
-			post get 은 쿼리스트링
+			//post get 은 쿼리스트링
 		}
 		// 그것을 꺼내서 key값을 구별하는 방법
 		// 비교하는 if 문을 사용하여 같을시 삭제
