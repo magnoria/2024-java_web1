@@ -29,7 +29,7 @@ const getLoginInfo = () => {
 			console.log('로그인상태')
 			//(3) 각 상태에 따라 로그인 메뉴 구성
 			html += `			<li class="nav-item">
-			          <a class="nav-link" href="#"> ${data.mid} 님</a> </li>
+			          <a class="nav-link" href="#"><img class="header_profile" src="/2024h_web1/upload/${data.mimg}"/> ${data.mid} 님</a> </li>
 			      
 			       		 <li class="nav-item">
 			          <a class="nav-link" href="#" onclick="onLogOut()">로그아웃</a> </li>`
@@ -48,7 +48,7 @@ const onLogOut = () => {
 	
 	const option= {method : 'DELETE'}
 	fetch('/2024h_web1/member/login' , option)
-		.then(response => {response.json()})
+		.then(response => response.json())
 		.then(data => {
 			if(data == true){
 				alert('로그아웃합니다.');
