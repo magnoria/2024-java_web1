@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+/*heade logo*/
+.header_logo{
+	width : 60px;
+}
+/*logo 부분을 대문자로 css에서는 소문자로 해서 적용이 안됬음
+주의할것*/
+
+/* 눈누 폰트*/
+@font-face {
+    font-family: 'establishRetrosansOTF';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2112@1.0/establishRetrosansOTF.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+*{
+	font-family: 'establishRetrosansOTF';
+}
