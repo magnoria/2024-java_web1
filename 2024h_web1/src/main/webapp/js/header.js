@@ -31,8 +31,15 @@ const getLoginInfo = () => {
 			html += `			<li class="nav-item">
 			          <a class="nav-link" href="#"><img class="header_profile" src="/2024h_web1/upload/${data.mimg}"/> ${data.mid} 님</a> </li>
 			      
-			       		 <li class="nav-item">
-			          <a class="nav-link" href="#" onclick="onLogOut()">로그아웃</a> </li>`
+					  
+					  <li class="nav-item"> <a class="nav-link" href="#"> ${ data.mpoint} POINT </a> </li>	
+					  
+					  
+					    <li class="nav-item">
+					  		<a class="nav-link" href="/2024h_web1/member/info.jsp">마이페이지</a> </li>
+					  
+			       		<li class="nav-item">
+			         		<a class="nav-link" href="#" onclick="onLogOut()">로그아웃</a> </li>`
 		}
 		//(4) 구성한 메뉴들을 innerHTML한다.
 		loginmenu.innerHTML = html;
