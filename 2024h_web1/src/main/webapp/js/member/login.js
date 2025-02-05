@@ -3,8 +3,8 @@ console.log("login.js")
 //[1] 로그인 요청 함수
 const onLogin = () => {
 	
-	//1. HTML INPUT DOM 가져오기
-	const midinput = document.querySelector('.midinput');
+	//1. HTML INPUT DOM 가져오기 document html을 객체화하는 것
+	const midinput = document.querySelector('.midinput'); // css 처럼 . #
 	const mpwdinput = document.querySelector('.mpwdinput');
 
 	//2. INPUT 입력값 가져오기

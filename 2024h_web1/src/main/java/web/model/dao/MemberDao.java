@@ -1,8 +1,10 @@
 package web.model.dao;
 
+
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import lombok.Getter;
@@ -34,12 +36,12 @@ public class MemberDao extends Dao {
 	 
  	
     // [1]. 회원가입 SQL 처리 메소드 
-    public boolean signup( MemberDto memberDto ) {
+    public int signup( MemberDto memberDto ) {
             try {
                     // [1] SQL 작성한다.
                     String sql ="insert into member( mid , mpwd , mname , mphone, mimg ) values( ? , ? , ? , ? , ? )";
                     // [2] DB와 연동된 곳에 SQL 기재한다.                 
-                    PreparedStatement ps = conn.prepareStatement(sql);
+                    PreparedStatement ps = conn.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS );
                     ps.setString( 1 , memberDto.getMid() );
                     ps.setString( 2 , memberDto.getMpwd() );
                     ps.setString( 3 , memberDto.getMname() );
@@ -48,9 +50,15 @@ public class MemberDao extends Dao {
                     // [3] 기재된 SQL를 실행하고 결과를 받는다. .         
                     int count = ps.executeUpdate();
                     // [4] 결과에 따른 처리 및 반환를 한다.
-                    if( count == 1 ) { return true; }
+                    if( count == 1 ) {     
+                    	ResultSet rs = ps.getGeneratedKeys();
+                    if( rs.next() ) {
+                        int mno = rs.getInt( 1 );
+                        return mno; // 회원가입 성공후 등록한 회원번호 반환 
+                    }
+              }
             }catch( SQLException e ) { System.out.println( e ); }
-            return false;
+            return 0;
     } // f end 
 	
     

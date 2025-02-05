@@ -20,6 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import web.model.dao.MemberDao;
 import web.model.dto.MemberDto;
+import web.model.dto.PointDto;
 
 @WebServlet("/member/signup")
 public class SignUpController extends HttpServlet {
@@ -76,8 +77,18 @@ public class SignUpController extends HttpServlet {
 		memberDto.setMimg(filename); // 업로드된 파일명을 dto에 넣기
 	
 		//12. 
-		
-				boolean result = MemberDao.getInstance().signup(memberDto);
+			int mno = MemberDao.getInstance().signup(memberDto);
+			boolean result = false;
+			if (mno >0 ) {
+				//* 회원성공시 포인트 지급
+				PointDto pointDto = new PointDto();
+				pointDto.setMno(mno);
+				pointDto.setPocomment("회원가입축하");
+				pointDto.setPocount(100);
+				MemberDao.getInstance().setPoint(pointDto);
+				result = true;
+			}
+				
 		//13.		
 				resp.setContentType("application/json");
 				resp.getWriter().print(result);
