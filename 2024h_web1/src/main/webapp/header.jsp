@@ -63,7 +63,13 @@
 	    </div>
 	  </div>
 </nav>
+	
+	<!-- 부트스트랩 알람 -->
+	<div class="alarmbox" style= "position : fixed; bottom : 10px; left : 10px;" >
+	
+		
 
+	</div>
 
 
 	<!-- 부트스트랩 JS  -->

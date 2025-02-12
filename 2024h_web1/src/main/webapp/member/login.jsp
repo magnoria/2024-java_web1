@@ -52,6 +52,7 @@
     </div>
   </div>
   
+
   <script type="text/javascript" src="/2024h_web1/js/member/login.js"></script>
 							<!-- 여길 수정안해서 login jsp가 실행이 안됬고 오류가 떳었음 -->
 </body>
