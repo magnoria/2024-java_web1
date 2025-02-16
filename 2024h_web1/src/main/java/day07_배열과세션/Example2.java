@@ -1,4 +1,4 @@
-package day07;
+package day07_배열과세션;
 
 import java.util.ArrayList;
 import java.util.Iterator;

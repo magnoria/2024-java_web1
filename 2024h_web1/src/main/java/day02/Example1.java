@@ -22,7 +22,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/day02/example1") // 자신이 임의로 만들면 됨
 public class Example1 extends HttpServlet { 
-	// 이클립스는 코드가 변경/수정 자동으로 서버에 빌드/배포 -> 메뉴 project -> build auto
+	// 이클립스는 코드가 변경/수정 자동으로 서버에 빌드/배포 -> 메뉴 project -> build automatical
 		//1. 서블릿 안에 코드 변경할 경우는 자동으로 리로드 된다. ctrl+ f11 다시 안해도 된다.
 		//2. 새로운 서블릿은 새로운 매핑주소가 서버에 등록(wer.xaml 자동)해야 하므로 서버를 수동 restart 해야한다. ctrl + art + r
 	

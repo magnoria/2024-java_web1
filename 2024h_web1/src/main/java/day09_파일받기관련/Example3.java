@@ -1,4 +1,4 @@
- package day09;
+ package day09_파일받기관련;
 
 import java.io.File;
 import java.io.FileOutputStream;
